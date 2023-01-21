@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/tablet.css">
+    <link rel="stylesheet" href="./css/movil.css">
+    <!-- means -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <img src="./images/logo.png" alt="logo de visions empresa">
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__login">
+            <div class="main__login-details">
+                <p class="main__login--title">Bienvenido de nuevo</p>
+                <p class="main__login--subtitle">Por favor ingrese su cuenta</p>
+                <br>
+                <br>
+                <label for="email-input">Correo</label>
+                <br>
+                <input id="email-input" type="email" placeholder="correoPrueba@gmail.com">
+                <br>
+                <label for="passwordInput">Contraseña</label>
+                <br>
+                <input id="passwordInput" type="password" placeholder="********">
+                <br>
+                <a href="password.html">Olvido su contraseña?</a>
+                <br>
+                <button class="main__login--login-btn" id="loginBtn" type="submit">Iniciar Sesión</button>
+                <br>
+            </div>
+        </div>
+        <div class="main__image">
+            <img src="./images/image-login.png" alt="imagen motivadora">
+        </div>
+    </main>
+    <div id="notification" class="notification">
+        <div class="notification__content">
+            <i id="icon" class="fa-solid fa-xmark  check"></i>
+            
+            <div class="notification__content-message">
+                <span class="text text-1"><b>Error</b></span>
+                <span class="text text-2">Ocurrio un error al iniciar sesión</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <div class="notification__progress"></div>
+    </div> 
+    <div id="modalAdd" class="modal">
+        <div class="modal__container">
+            <div class="modal__close" id="closeModalBtn">X</div>
+        </div>
+    </div>
+    
+    <script type="module" src="./js/login.js"></script>
+    <script type="module" src="./js/firebase.js"></script>
+</body>
+</html>

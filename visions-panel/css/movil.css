@@ -1,0 +1,95 @@
+@media (max-width: 425px) {
+    body{
+        overflow: hidden;
+    }
+    .notification{
+        display: none;
+    }
+    .main__login-details{
+        margin-left: 0rem;
+    }
+    .main__image{
+        display: none;
+    }
+    .main__image img{
+        display: none;
+    }
+
+    /* recuperar contraseña */
+
+    .bx-lg{
+        font-size: 2.5rem !important;
+    }
+
+    .password{
+        width: 340px;
+    }
+    .texto-regreso{
+        margin-left: 9%;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .notification{
+        display: none;
+    }
+
+    body{
+        overflow: hidden;
+    }
+    .main__login-details{
+        margin-left: 0rem;
+    }
+    .main__image img{
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    body{
+        overflow: hidden;
+    }
+    .notification{
+        display: none;
+    }
+    .main__login-details{
+        margin-left: 0rem;
+    }
+    .main__image{
+        display: none;
+    }
+    .main__image img{
+        display: none;
+    }
+
+    .main__login-details input{
+        width: 250px;
+    }
+    .main__login-details a{
+        margin-left: 43%;
+    }
+
+    .main__login--login-btn{
+        width: 265px;
+    }
+    .main__login--selection-btn{
+        width: 257px;
+    }
+
+    .password{
+        margin-left: 25px;
+    }
+
+    .texto-regreso{
+        margin-left: 2%;
+    }
+
+    .email{
+        margin-left: 38%;
+    }
+
+    .bx-lg{
+        font-size: 2rem !important;
+    }
+}

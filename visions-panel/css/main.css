@@ -1,0 +1,384 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+:root{
+    --oneHundredPercent: 100%;
+    --centerPosition: center;
+    --flex: flex;
+    --purpleColor: #180A2F;
+    --grayColor: #C4C4C4;
+    --noticationColor: rgb(255 195 195);
+    --notificationAnimation:rgb(251, 89, 89);
+    --colorSpecial: #FD8F8F;
+    --orangeColor: #FC6C6C;
+    --transform: scale(0.75);
+    --boxShadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    --notificationSucces1: rgb(195 255 196);
+    --notificationSucces2: rgb(13 199 40);
+}
+/* login styles */
+
+.header{
+    width: var(--oneHundredPercent);
+    height: 100px;
+    display: var(--flex);
+    justify-content: initial;
+    align-items: var(--centerPosition);
+}
+.header, 
+.header__container{
+    width: 240px;
+    height: 100px;
+}
+.header,
+.header__container img{
+    height: 55px;
+    margin: 20px;
+}
+.main{
+    width: 100%;
+    height: 89vh;
+    display: var(--flex);
+}
+.main__login{
+    width: 50%;
+    display: var(--flex);
+    justify-content: var(--centerPosition);
+    align-items: var(--centerPosition);
+}
+.main__login-details{
+    height: 600px;
+    margin-top: 9rem;
+    margin-left: 8rem;
+}
+.main__login--title{
+    font-size: 33px;
+    color: var(--purpleColor);
+}
+.main__login--subtitle{
+    font-size: 16px;
+    color: var(--grayColor);
+}
+.main__login-details label{
+    color: var(--purpleColor);
+}
+.main__login-details input{
+    width: 500px;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid ;
+    border-radius: 10px;
+    background-color:#fcfcfc;
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+.main__login-details input::placeholder{
+    color: #8B8585;
+    padding-left: 10px;
+}
+.main__login-details a{
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--colorSpecial);
+    margin-left: 70%;
+}
+.main__login--login-btn{
+    width: 500px;
+    height: 50px;
+    margin-top: 40px;
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: var(--orangeColor);
+}
+.main__login--selection-btn{
+    width: 300px;
+    height: 50px;
+    margin: 30px 20%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.main__login--login-btn:hover{
+    background-color: #180A2F;
+    color: var(--colorSpecial);
+    transition: 1s;
+}
+.main__login--login-btn:active{
+    transform: var(--transform);
+    box-shadow: var(--boxShadow);
+}
+.main__login--selection-btn:hover{
+    background-color: #180A2F;
+    color: var(--colorSpecial);
+    transition: 1s;
+}
+.main__login--selection-btn:active{
+    transform: var(--transform);
+    box-shadow: var(--boxShadow);
+}
+.main__image{
+    width: 50%;
+}
+.main__image img{
+    width: auto;
+    height: 80vh;
+    margin-left: 10rem;
+}
+/* notifications error*/
+.notification{
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    border-radius: 12px;
+    background-color: var(--noticationColor);
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid var(--notificationAnimation);
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+.notification.active{
+    transform: translateX(0%);
+}
+.notification .notification__content{
+    display: flex;
+    align-items: var(--centerPosition);
+}
+.notification__content .check{
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--notificationAnimation);
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.notification__content-message{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+.notification__content-message .text{
+    font-size: 20px;
+    font-weight: 400;
+    color:white;
+}
+.notification__content-message .text .text-1{
+    font-weight: 600;
+    color: white;
+}
+.notification .close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.notification .close:hover{
+    opacity: 1;
+}
+.notification .notification__progress{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #ddd;
+}
+.notification .notification__progress::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    height: 100%;
+    width: 100%;
+    background-color:var(--notificationAnimation);
+}
+.notification__progress.active:before{
+    animation: progress 5s linear forwards;
+}
+@keyframes progress {
+    100%{
+        right: 100%;
+    }
+}
+/* notification succes */
+.succes{
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    border-radius: 12px;
+    background-color: var(--notificationSucces1);
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid var(--notificationSucces2);
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+.succes.active{
+    transform: translateX(0%);
+}
+.succes .succes__content{
+    display: flex;
+    align-items: var(--centerPosition);
+}
+.succes__content .check{
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--notificationSucces2);
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.notification__content-message{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+.notification__content-message .text{
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+.notification__content-message .text .text-1{
+    font-weight: 600;
+    color: white;
+}
+.succes .close-succes{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.succes .close-succes:hover{
+    opacity: 1;
+}
+.succes .succes__progress{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #ddd;
+}
+.succes .succes__progress::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    height: 100%;
+    width: 100%;
+    background-color:var(--notificationSucces2);
+}
+.succes__progress.active:before{
+    animation: progress 5s linear forwards;
+}
+@keyframes progress {
+    100%{
+        right: 100%;
+    }
+}
+/* modal view */
+.modal{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.modal__container{
+    background: white;
+    min-width: 400px;
+    max-width: 60%;
+    min-height: 300px;
+    max-height: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+}
+.modal__close{
+    background-color: red;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    cursor: pointer;
+}
+/* recuperar contraseña */
+.arrow{
+    color: #8B8585;
+    margin: 30px;
+}
+.main{
+    width: 100%;
+    height: 80vh;
+    display: var(--flex);
+    justify-content: var(--centerPosition);
+}
+
+.main__password{
+    width: 500px;
+}
+.main__password input{
+    width: 500px;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid ;
+    border-radius: 10px;
+    background-color:#fcfcfc;
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+.main__password input::placeholder{
+    color: #8B8585;
+    padding-left: 10px;
+}
+
+.email{
+    color: var(--colorSpecial);
+    margin-left: 45%;
+    margin-bottom: 30px;
+}
+
+.texto-regreso{
+    margin-left: 20%;
+}
+
+.enlace-password{
+    text-decoration: none;
+    color: var(--orangeColor);
+}
+.note-button{
+    display: none;
+}

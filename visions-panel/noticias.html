@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/tablet.css">
+    <link rel="stylesheet" href="./css/movil.css">
+    <!-- means -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <img src="./images/logo.png" alt="logo de la empresa visions">
+        
+        <ul class="header-menu">
+            <li>
+                <a href="noticias.html">
+                    <img src="./images/noticias-icon.svg" alt="opcion noticias">
+                    Noticias
+                </a>
+            </li>
+            <li>
+                <a href="gestiones.html">
+                    <img src="./images/icon-gestiones.svg" alt="opcion gestiones">
+                    Gestiones
+                </a>
+            </li>
+            <li>
+                <a href="tareas.html">
+                    <img src="./images/icon-tareas.svg" alt="opcion Tareas">
+                    Tareas
+                </a>
+            </li>
+            <li>
+                <a href="reportes.html">
+                    <img src="./images/icon-reportes.svg" alt="opcion Reportes">
+                    Reportes
+                </a>
+            </li>
+        </ul>
+        <a id="salir" class="header-salir" href="login.html">
+            <img src="./images/icon salir.svg" alt="salir de la applicación">
+            Salir
+        </a>
+    </header>
+    <main class="main">
+        <section class="hero">
+            <div class="hero-welcome">
+                <h1>Hola de nuevo👋🏻</h1>
+                <h2>Que alegre tenerte de regreso!!</h2>
+            </div>
+            <div class="hero-search">
+                <input id="search-new" placeholder="🔍   Buscar noticia" type="text">
+                <button id="search-btn">Buscar</button>
+            </div>
+        </section>
+        <section class="news">
+            <div class="create-new">
+                <div class="create-new-title">
+                    <img src="./images/icon-tareas.svg" alt="crear noticias">
+                    <h3>Crea una noticia</h3>
+                </div>
+                <div class="details">
+                    <div class="details-news">
+                        <input id="db" placeholder="Nivel académico" type="text">
+                        <br>
+                        <input id="titulo" placeholder="Titulo de la noticia" type="text">
+                        <br>
+                        <textarea id="contenido" placeholder="Contenido de la noticia.." cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="details-image">
+                        <input id="nameBox" placeholder="Nombre de la imagen" type="text"> <label id="extLab"></label>
+                        <label id="upProgress" class="upp-progress"></label>
+                        <div class="image-container"></div>
+                        <button id="selectionBtn" class="selection-btn">Seleccionar imagen</button>
+                        <br>
+                        <button id="createBtn" type="submit" class="create-btn">Crear noticia</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="adminNews" class="admin-news">
+            <div id="news-container" class="container-news">
+            </div>
+        </section>
+    </main>
+    <div id="notification" class="notification">
+        <div class="notification__content">
+            <i id="icon" class="fa-solid fa-check  check"></i>
+            <div class="notification__content-message">
+                <span class="text text-1"><b>Exito</b></span>
+                <span class="text text-2">Noticia creada correctamente</span>
+            </div>                        
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <div class="notification__progress"></div>
+    </div> 
+    <script type="module" src="./js/news.js"></script>
+    <script type="module" src="./js/firebase.js"></script>
+</body>
+</html>
